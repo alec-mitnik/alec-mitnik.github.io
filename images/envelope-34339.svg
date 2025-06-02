@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="4 -5 123.25 95.25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a">
+   <stop stop-color="#dce7ec" offset="0"/>
+   <stop stop-color="#839297" offset="1"/>
+  </linearGradient>
+  <linearGradient id="e" x2="0" y1="41.915" y2="91.02" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="d" x2="0" y1="12.521" y2="84.921" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="c" x2="0" y1="15.956" y2="77.124" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <radialGradient id="b" cx="792.81" cy="316.91" r="91.468" gradientTransform="matrix(1.2839 0 0 .81206 -949.68 -215)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#585858" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m6.596 5.0391h117.98v74.625h-117.98z" fill="url(#b)" stroke="#616b6d" stroke-linejoin="round" stroke-width="4.1216"/>
+ <path d="m6.596 5.1135v68.86l0.03184 5.616 58.966-37.238-58.934-37.238h-0.0637z" fill="url(#c)" stroke="#000" stroke-linejoin="round" stroke-width="4.1216"/>
+ <path d="m124.58 5.2371v68.86l-0.03183 5.616-58.966-37.238 58.934-37.238h0.0637z" fill="url(#d)" stroke="#000" stroke-linejoin="round" stroke-width="4.1216"/>
+ <path d="m48.88 39.635-42.246 40.014-0.03192 0.12765h118l-0.06381-0.12765-42.246-40.014c-10.684-10.12-22.43-10.398-33.408 0z" fill="url(#e)" stroke="#000" stroke-linejoin="round" stroke-width="4.1216"/>
+ <path d="m48.853 41.146-42.199-35.885-0.03188-0.11447h117.86l-0.06374 0.11447-42.199 35.885c-10.672 9.0755-22.405 9.3248-33.37 0z" fill="#c6d2d7" stroke="#000" stroke-linejoin="round" stroke-width="4.1216"/>
+</svg>

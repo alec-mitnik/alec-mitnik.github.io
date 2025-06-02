@@ -54,34 +54,87 @@
   });
 </script>
 
+<script type="text/javascript">
+  function openKofiDialog() {
+    document.getElementById("kofi-dialog").showModal();
+  }
+
+  function closeKofiDialog() {
+    document.getElementById("kofi-dialog").close();
+  }
+</script>
+
 <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
 <body>
-  <div id="profile-picture-wrapper" class="column">
-    <div id="profile-picture"></div>
-  </div>
+  <!-- Ko-fi tipping dialog -->
+  <dialog id="kofi-dialog" style="width: 350px; max-width: 100%; height: 675px; max-height: 100%;">
+    <div id="kofi-backdrop" class="modal-backdrop" onclick="closeKofiDialog()"></div>
+    <div class="modal">
+      <button autofocus class="close-button" aria-label="Close tipping dialog" onclick="closeKofiDialog()">
+        <span>❌&#65038;</span>
+      </button>
+      <iframe
+        src="https://ko-fi.com/alecmitnik/?hidefeed=true&widget=true&embed=true&preview=true"
+        style="border: none; border-radius: 8px; width: 100%; height: 100%;"
+      ></iframe>
+    </div>
+  </dialog>
 
   <div class="scroll-page">
     <div id="site-header" class="column">
       <h1 class="title">Alec Mitnik</h1>
       <h2 class="subtitle">Portfolio</h2>
     </div>
+
+    <div id="profile-picture-wrapper" class="column">
+      <div id="profile-picture"></div>
+    </div>
+
+    <div id="personal-links" class="row">
+      <a id="LinkedIn-link" class="bloom-button" target="_new"
+          href="https://www.linkedin.com/in/alec-mitnik/">
+        <span class="element-text">
+          <img src="./images/LinkedIn_icon.svg">
+          Connect Professionally
+        </span>
+      </a>
+      <a id="email-link" class="bloom-button" target="_new"
+          href="mailto:alecmitnik@gmail.com">
+        <span class="element-text">
+          <img src="./images/envelope-34339.svg">
+          Connect Personally
+        </span>
+      </a>
+      <button id="ko-fi-button" class="bloom-button" target="_new"
+           onclick="openKofiDialog()">
+        <span class="element-text">
+          <img src="./images/kofi_symbol.svg">
+          Support My Projects
+        </span>
+      </a>
+    </div>
+
     <div id="down-arrow"></div>
   </div>
   <div class="scroll-page">
     <div id="project-links" class="row">
       <a id="infinite-puzzles-link" class="bloom-button" target="_new"
           href="https://alec-mitnik-infinite-puzzles.netlify.app/">
-        <span class="element-text">Infinite Puzzles</span>
+        <span class="element-text">🧩 Infinite Puzzles</span>
       </a>
       <a id="take-a-hike-link" class="bloom-button" target="_new"
           href="https://alec-mitnik-take-a-hike.netlify.app/">
-        <span class="element-text">Take a Hike</span>
+        <span class="element-text">🌼 Take a Hike</span>
+      </a>
+      <a id="take-a-hike-link" class="bloom-button" target="_new"
+          href="https://alec-mitnik-color-bloom.netlify.app/art.html">
+        <span class="element-text">🎨 Color Bloom Art Maker</span>
       </a>
       <a id="context-lookups-link" class="bloom-button" target="_new"
           href="https://chromewebstore.google.com/detail/context-lookups/pdpcaajpbemllmagmijafgcnpmlbhhjd">
-        <span class="element-text">Context Lookups</span>
+        <span class="element-text">🔍 Context Lookups</span>
       </a>
     </div>
   </div>
