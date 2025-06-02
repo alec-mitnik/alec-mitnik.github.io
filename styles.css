@@ -16,7 +16,8 @@
   font-weight: 500;
   line-height: 1.5;
   color: white;
-  /* scroll-snap-type: both proximity;
+  /* Too jerky on iOS
+  scroll-snap-type: both proximity;
   scroll-behavior: smooth; */
 }
 
@@ -112,7 +113,8 @@ button {
   width: 100%;
   min-height: 100%;
   padding: 2rem;
-  /* scroll-snap-align: center; */
+  /* Too jerky on iOS
+  scroll-snap-align: center; */
 }
 
 #site-header {
@@ -169,6 +171,8 @@ button {
 
   .bloom-button {
     padding: 0.5rem 0.75rem;
+    border-width: 1px;
+    border-radius: 2px;
 
     .element-text {
       font-family: inherit;
@@ -216,6 +220,7 @@ button {
   user-select: none;
   appearance: none;
   border: 2px solid white;
+  border-radius: 4px;
   background: transparent;
   padding: 1.5rem 2.5rem;
   cursor: pointer;

@@ -17,16 +17,20 @@
   const bloomButtons = [...document.querySelectorAll(".bloom-button")];
 
   for (const bloomButton of bloomButtons) {
+    const h = bloomButton.dataset.hue != null ? parseInt(bloomButton.dataset.hue) : undefined;
+    const l = bloomButton.dataset.lightness != null ? parseFloat(bloomButton.dataset.lightness) : undefined;
+    const s = bloomButton.dataset.saturation != null ? parseFloat(bloomButton.dataset.saturation) : undefined;
+
     bloomButton.onmouseenter = (event) => {
       if (!Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
         ColorBloom.clearCanvas(event.currentTarget);
-        ColorBloom.bloomColor({spawningElement: event.currentTarget, confineToSpawningElement: true});
+        ColorBloom.bloomColor({color: {h, l, s}, spawningElement: event.currentTarget, confineToSpawningElement: true});
       }
     };
     bloomButton.onfocus = (event) => {
       if (!Array.from(document.querySelectorAll(":hover")).includes(event.currentTarget)) {
         ColorBloom.clearCanvas(event.currentTarget);
-        ColorBloom.bloomColor({spawningElement: event.currentTarget, confineToSpawningElement: true});
+        ColorBloom.bloomColor({color: {h, l, s}, spawningElement: event.currentTarget, confineToSpawningElement: true});
       }
     };
     bloomButton.onmouseleave = () => {
@@ -43,10 +47,10 @@
     };
   }
 
-  window.addEventListener("scroll", () => {
+  document.body.addEventListener("scroll", () => {
     const downArrow = document.getElementById("down-arrow");
 
-    if (document.documentElement.scrollTop > 0) {
+    if (document.body.scrollTop > 0) {
       downArrow.classList.add("scrolled");
     } else {
       downArrow.classList.remove("scrolled");
@@ -93,21 +97,21 @@
     </div>
 
     <div id="personal-links" class="row">
-      <a id="LinkedIn-link" class="bloom-button" target="_new"
+      <a id="LinkedIn-link" class="bloom-button" data-hue="240" target="_new"
           href="https://www.linkedin.com/in/alec-mitnik/">
         <span class="element-text">
           <img src="./images/LinkedIn_icon.svg">
-          Connect Professionally
+          LinkedIn
         </span>
       </a>
-      <a id="email-link" class="bloom-button" target="_new"
+      <a id="email-link" class="bloom-button" data-hue="180" data-lightness="0.75" data-saturation="0.25" target="_new"
           href="mailto:alecmitnik@gmail.com">
         <span class="element-text">
           <img src="./images/envelope-34339.svg">
-          Connect Personally
+          Email
         </span>
       </a>
-      <button id="ko-fi-button" class="bloom-button" target="_new"
+      <button id="ko-fi-button" class="bloom-button" data-hue="0" target="_new"
            onclick="openKofiDialog()">
         <span class="element-text">
           <img src="./images/kofi_symbol.svg">
