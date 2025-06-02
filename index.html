@@ -12,7 +12,7 @@
 
   const profilePicture = document.getElementById("profile-picture");
   ColorBloom.bloomImage({src: 'images/PXL_Avatar_1B.jpg', spawningElement: profilePicture,
-      confineToSpawningElement: true, maxRadius: 179, retriggerOnScreenSizeChange: true});
+      confineToSpawningElement: true, maxRadius: 179, triggerOnLoad: true, retriggerOnScreenSizeChange: true});
 
   const bloomButtons = [...document.querySelectorAll(".bloom-button")];
 
@@ -59,6 +59,8 @@
 </script>
 
 <script type="text/javascript">
+  "use strict";
+
   function openKofiDialog() {
     document.getElementById("kofi-dialog").showModal();
   }
