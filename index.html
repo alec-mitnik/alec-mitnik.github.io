@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<title>Alec Mitnik - Portfolio</title>
+
+<script type="module">
+  import * as ColorBloom from "https://alec-mitnik-color-bloom.netlify.app/color-bloom.js";
+
+  ColorBloom.bloomColor({color: {s: 0, l: 0}, triggerOnLoad: true, retriggerOnScreenSizeChange: true});
+
+  const profilePicture = document.getElementById("profile-picture");
+  ColorBloom.bloomImage({src: 'images/PXL_Avatar_1B.jpg', spawningElement: profilePicture,
+      confineToSpawningElement: true, maxRadius: 179, retriggerOnScreenSizeChange: true});
+
+  const bloomButtons = [...document.querySelectorAll(".bloom-button")];
+
+  for (const bloomButton of bloomButtons) {
+    bloomButton.onmouseenter = (event) => {
+      if (!Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
+        ColorBloom.clearCanvas(event.currentTarget);
+        ColorBloom.bloomColor({spawningElement: event.currentTarget, confineToSpawningElement: true});
+      }
+    };
+    bloomButton.onfocus = (event) => {
+      if (!Array.from(document.querySelectorAll(":hover")).includes(event.currentTarget)) {
+        ColorBloom.clearCanvas(event.currentTarget);
+        ColorBloom.bloomColor({spawningElement: event.currentTarget, confineToSpawningElement: true});
+      }
+    };
+    bloomButton.onmouseleave = () => {
+      if (!Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
+        ColorBloom.stopBlooming(event.currentTarget);
+        ColorBloom.bloomErase({spawningElement: event.currentTarget});
+      }
+    };
+    bloomButton.onblur = () => {
+      if (!Array.from(document.querySelectorAll(":hover")).includes(event.currentTarget)) {
+        ColorBloom.stopBlooming(event.currentTarget);
+        ColorBloom.bloomErase({spawningElement: event.currentTarget});
+      }
+    };
+  }
+
+  window.addEventListener("scroll", () => {
+    const downArrow = document.getElementById("down-arrow");
+
+    if (document.documentElement.scrollTop > 0) {
+      downArrow.classList.add("scrolled");
+    } else {
+      downArrow.classList.remove("scrolled");
+    }
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+  <div id="profile-picture-wrapper" class="column">
+    <div id="profile-picture"></div>
+  </div>
+
+  <div class="scroll-page">
+    <div id="site-header" class="column">
+      <h1 class="title">Alec Mitnik</h1>
+      <h2 class="subtitle">Portfolio</h2>
+    </div>
+    <div id="down-arrow"></div>
+  </div>
+  <div class="scroll-page">
+    <div id="project-links" class="row">
+      <a id="infinite-puzzles-link" class="bloom-button" target="_new"
+          href="https://alec-mitnik-infinite-puzzles.netlify.app/">
+        <span class="element-text">Infinite Puzzles</span>
+      </a>
+      <a id="take-a-hike-link" class="bloom-button" target="_new"
+          href="https://alec-mitnik-take-a-hike.netlify.app/">
+        <span class="element-text">Take a Hike</span>
+      </a>
+      <a id="context-lookups-link" class="bloom-button" target="_new"
+          href="https://chromewebstore.google.com/detail/context-lookups/pdpcaajpbemllmagmijafgcnpmlbhhjd">
+        <span class="element-text">Context Lookups</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
