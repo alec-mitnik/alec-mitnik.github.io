@@ -79,7 +79,7 @@ button {
   justify-content: center;
   align-items: center;
   background: black;
-  padding: 8px 12px;
+  padding: 8px 16px;
   user-select: none;
   text-align: center;
   width: 100%;
@@ -96,6 +96,10 @@ button {
   flex-direction: column;
 }
 
+.full-width {
+  width: 100%;
+}
+
 #profile-picture-wrapper {
   position: absolute;
   inset: 0;
@@ -110,6 +114,7 @@ button {
 }
 
 .scroll-page {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,15 +126,37 @@ button {
   scroll-snap-align: center; */
 }
 
-#site-header {
-  position: absolute;
-  top: 5%;
+.template-page {
+  display: grid;
+  grid-template-rows: minmax(min-content, 1fr) minmax(min-content, auto) minmax(min-content, 1fr);
+  grid-template-columns: 1fr;
+  height: 100%;
+  min-height: min-content;
+
+  .section-header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  > :first-child {
+    align-self: flex-start;
+  }
+
+  > :last-child {
+    align-self: flex-end;
+  }
+
+  > * {
+    justify-self: center;
+  }
+}
+
+.section-header {
   filter: drop-shadow(0 0 4px black);
 }
 
 #down-arrow {
-  position: absolute;
-  bottom: 2rem;
+  padding-top: 4rem;
 
   &::before {
     content: '▼';
@@ -166,8 +193,6 @@ button {
 }
 
 #personal-links {
-  position: absolute;
-  bottom: max(6rem, 15%);
   gap: 1rem;
   max-width: calc(100% - 4rem);
   flex-wrap: wrap;
@@ -182,6 +207,7 @@ button {
       font-family: inherit;
       font-weight: 500;
       gap: 0.5rem;
+      padding: 5px 10px;
 
       > * {
         height: 1.25rem;
@@ -203,7 +229,7 @@ button {
 
 #project-links {
   font-size: 1.5rem;
-  gap: 4rem;
+  gap: 2rem;
   max-width: 100%;
   flex-wrap: wrap;
   align-items: stretch;

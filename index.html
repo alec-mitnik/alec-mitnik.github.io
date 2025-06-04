@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
@@ -88,44 +88,51 @@
     </div>
   </dialog>
 
-  <div class="scroll-page">
-    <div id="site-header" class="column">
-      <h1 class="title">Alec Mitnik</h1>
-      <h2 class="subtitle">Portfolio</h2>
-    </div>
+  <section class="scroll-page template-page">
+    <header class="section-header column">
+      <h1>Alec Mitnik</h1>
+      <h2>Portfolio</h2>
+    </header>
 
     <div id="profile-picture-wrapper" class="column">
       <div id="profile-picture"></div>
     </div>
+    <div></div>
 
-    <div id="personal-links" class="row">
-      <a id="LinkedIn-link" class="bloom-button" data-hue="240" target="_new"
-          href="https://www.linkedin.com/in/alec-mitnik/">
-        <span class="element-text">
-          <img src="./images/LinkedIn_icon.svg">
-          LinkedIn
-        </span>
-      </a>
-      <a id="email-link" class="bloom-button" data-hue="180" data-lightness="0.75" data-saturation="0.25" target="_new"
-          href="mailto:alecmitnik@gmail.com">
-        <span class="element-text">
-          <img src="./images/envelope-34339.svg">
-          Email
-        </span>
-      </a>
-      <button id="ko-fi-button" class="bloom-button" data-hue="0" target="_new"
-           onclick="openKofiDialog()">
-        <span class="element-text">
-          <img src="./images/kofi_symbol.svg">
-          Support My Projects
-        </span>
-      </a>
+    <div class="column full-width">
+      <nav id="personal-links" class="row">
+        <a id="LinkedIn-link" class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4" target="_new"
+            href="https://www.linkedin.com/in/alec-mitnik/">
+          <span class="element-text">
+            <img src="./images/LinkedIn_icon.svg" alt="">
+            LinkedIn
+          </span>
+        </a>
+        <a id="email-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75" target="_new"
+            href="mailto:alecmitnik@gmail.com">
+          <span class="element-text">
+            <img src="./images/envelope-34339.svg" alt="">
+            Email
+          </span>
+        </a>
+        <button id="ko-fi-button" class="bloom-button" data-hue="0" target="_new"
+             onclick="openKofiDialog()">
+          <span class="element-text">
+            <img src="./images/kofi_symbol.svg" alt="Ko-fi logo">
+            Support My Projects
+          </span>
+        </a>
+      </nav>
+
+      <div id="down-arrow"></div>
     </div>
+  </section>
+  <section class="scroll-page template-page">
+    <header class="section-header column">
+      <h2>Project Links</h2>
+    </header>
 
-    <div id="down-arrow"></div>
-  </div>
-  <div class="scroll-page">
-    <div id="project-links" class="row">
+    <nav id="project-links" class="row">
       <a id="infinite-puzzles-link" class="bloom-button" target="_new"
           href="https://alec-mitnik-infinite-puzzles.netlify.app/">
         <span class="element-text">🧩 Infinite Puzzles</span>
@@ -142,7 +149,7 @@
           href="https://chromewebstore.google.com/detail/context-lookups/pdpcaajpbemllmagmijafgcnpmlbhhjd">
         <span class="element-text">🔍 Context Lookups</span>
       </a>
-    </div>
-  </div>
+    </nav>
+  </section>
 </body>
 </html>
