@@ -12,7 +12,11 @@
 
   const profilePicture = document.getElementById("profile-picture");
   ColorBloom.bloomImage({src: 'images/PXL_Avatar_1B.jpg', spawningElement: profilePicture,
-      confineToSpawningElement: true, maxRadius: 179, triggerOnLoad: true, retriggerOnScreenSizeChange: true});
+      confineToSpawningElement: true, maxRadius: 179, triggerOnLoad: true,
+      retriggerOnScreenSizeChange: true, overridingCanvasAttributes: {
+        role: "img",
+        ariaLabel: "Photo of me, Alec Mitnik",
+      },});
 
   const bloomButtons = [...document.querySelectorAll(".bloom-button")];
 
@@ -47,10 +51,10 @@
     };
   }
 
-  document.body.addEventListener("scroll", () => {
+  document.querySelector("main").addEventListener("scroll", (event) => {
     const downArrow = document.getElementById("down-arrow");
 
-    if (document.body.scrollTop > 0) {
+    if (event.currentTarget.scrollTop > 0) {
       downArrow.classList.add("scrolled");
     } else {
       downArrow.classList.remove("scrolled");
@@ -75,7 +79,7 @@
 
 <body>
   <!-- Ko-fi tipping dialog -->
-  <dialog id="kofi-dialog" style="width: 350px; max-width: 100%; height: 675px; max-height: 100%;">
+  <dialog id="kofi-dialog" aria-label="Support My Projects" style="width: 350px; max-width: 100%; height: 675px; max-height: 100%;">
     <div id="kofi-backdrop" class="modal-backdrop" onclick="closeKofiDialog()"></div>
     <div class="modal">
       <button autofocus class="close-button" aria-label="Close tipping dialog" onclick="closeKofiDialog()">
@@ -88,68 +92,69 @@
     </div>
   </dialog>
 
-  <section class="scroll-page template-page">
-    <header class="section-header column">
-      <h1>Alec Mitnik</h1>
-      <h2>Portfolio</h2>
-    </header>
+  <main>
+    <section class="scroll-page template-page">
+      <header class="section-header column">
+        <h1>Alec Mitnik</h1>
+        <h2>Portfolio</h2>
+      </header>
 
-    <div id="profile-picture-wrapper" class="column">
-      <div id="profile-picture"></div>
-    </div>
-    <div></div>
+      <div id="profile-picture-wrapper" class="column">
+        <div id="profile-picture"></div>
+      </div>
 
-    <div class="column full-width">
-      <nav id="personal-links" class="row">
-        <a id="LinkedIn-link" class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4" target="_new"
-            href="https://www.linkedin.com/in/alec-mitnik/">
-          <span class="element-text">
-            <img src="./images/LinkedIn_icon.svg" alt="">
-            LinkedIn
-          </span>
+      <div class="column full-width">
+        <nav id="personal-links" class="row" aria-label="Personal Links">
+          <a id="LinkedIn-link" class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4" target="_new"
+              href="https://www.linkedin.com/in/alec-mitnik/">
+            <span class="element-text">
+              <img src="./images/LinkedIn_icon.svg" alt="">
+              LinkedIn
+            </span>
+          </a>
+          <a id="email-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75" target="_new"
+              href="mailto:alecmitnik@gmail.com">
+            <span class="element-text">
+              <img src="./images/envelope-34339.svg" alt="">
+              Email
+            </span>
+          </a>
+          <button id="kofi-button" class="bloom-button" data-hue="0" target="_new"
+               onclick="openKofiDialog()">
+            <span class="element-text">
+              <img src="./images/kofi_symbol.svg" alt="Ko-fi logo">
+              Support My Projects
+            </span>
+          </a>
+        </nav>
+
+        <div id="down-arrow"></div>
+      </div>
+    </section>
+    <section class="scroll-page template-page">
+      <header class="section-header column">
+        <h2 id="project-links-header">Project Links</h2>
+      </header>
+
+      <nav id="project-links" class="row" aria-labelledby="project-links-header">
+        <a id="infinite-puzzles-link" class="bloom-button" target="_new"
+            href="https://alec-mitnik-infinite-puzzles.netlify.app/">
+          <span class="element-text"><span aria-hidden="true">🧩&nbsp;</span>Infinite Puzzles</span>
         </a>
-        <a id="email-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75" target="_new"
-            href="mailto:alecmitnik@gmail.com">
-          <span class="element-text">
-            <img src="./images/envelope-34339.svg" alt="">
-            Email
-          </span>
+        <a id="take-a-hike-link" class="bloom-button" target="_new"
+            href="https://alec-mitnik-take-a-hike.netlify.app/">
+          <span class="element-text"><span aria-hidden="true">🌼&nbsp;</span>Take a Hike</span>
         </a>
-        <button id="ko-fi-button" class="bloom-button" data-hue="0" target="_new"
-             onclick="openKofiDialog()">
-          <span class="element-text">
-            <img src="./images/kofi_symbol.svg" alt="Ko-fi logo">
-            Support My Projects
-          </span>
+        <a id="take-a-hike-link" class="bloom-button" target="_new"
+            href="https://alec-mitnik-color-bloom.netlify.app/art.html">
+          <span class="element-text"><span aria-hidden="true">🎨&nbsp;</span>Color Bloom Art Maker</span>
+        </a>
+        <a id="context-lookups-link" class="bloom-button" target="_new"
+            href="https://chromewebstore.google.com/detail/context-lookups/pdpcaajpbemllmagmijafgcnpmlbhhjd">
+          <span class="element-text"><span aria-hidden="true">🔍&nbsp;</span>Context Lookups</span>
         </a>
       </nav>
-
-      <div id="down-arrow"></div>
-    </div>
-  </section>
-  <section class="scroll-page template-page">
-    <header class="section-header column">
-      <h2>Project Links</h2>
-    </header>
-
-    <nav id="project-links" class="row">
-      <a id="infinite-puzzles-link" class="bloom-button" target="_new"
-          href="https://alec-mitnik-infinite-puzzles.netlify.app/">
-        <span class="element-text">🧩 Infinite Puzzles</span>
-      </a>
-      <a id="take-a-hike-link" class="bloom-button" target="_new"
-          href="https://alec-mitnik-take-a-hike.netlify.app/">
-        <span class="element-text">🌼 Take a Hike</span>
-      </a>
-      <a id="take-a-hike-link" class="bloom-button" target="_new"
-          href="https://alec-mitnik-color-bloom.netlify.app/art.html">
-        <span class="element-text">🎨 Color Bloom Art Maker</span>
-      </a>
-      <a id="context-lookups-link" class="bloom-button" target="_new"
-          href="https://chromewebstore.google.com/detail/context-lookups/pdpcaajpbemllmagmijafgcnpmlbhhjd">
-        <span class="element-text">🔍 Context Lookups</span>
-      </a>
-    </nav>
-  </section>
+    </section>
+  </main>
 </body>
 </html>
