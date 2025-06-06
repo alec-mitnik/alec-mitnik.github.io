@@ -93,7 +93,7 @@
   </dialog>
 
   <main>
-    <section class="scroll-page template-page">
+    <section class="scroll-page template-page shrinking-center">
       <header class="section-header column">
         <h1>Alec Mitnik</h1>
         <h2>Portfolio</h2>
@@ -105,13 +105,6 @@
 
       <div class="column full-width">
         <nav id="personal-links" class="row" aria-label="Personal Links">
-          <a id="LinkedIn-link" class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4" target="_new"
-              href="https://www.linkedin.com/in/alec-mitnik/">
-            <span class="element-text">
-              <img src="./images/LinkedIn_icon.svg" alt="">
-              LinkedIn
-            </span>
-          </a>
           <a id="email-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75" target="_new"
               href="mailto:alecmitnik@gmail.com">
             <span class="element-text">
@@ -119,16 +112,23 @@
               Email
             </span>
           </a>
-          <button id="kofi-button" class="bloom-button" data-hue="0" target="_new"
-               onclick="openKofiDialog()">
+          <a id="LinkedIn-link" class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4" target="_new"
+              href="https://www.linkedin.com/in/alec-mitnik/">
             <span class="element-text">
-              <img src="./images/kofi_symbol.svg" alt="Ko-fi logo">
-              Support My Projects
+              <img src="./images/LinkedIn_icon.svg" alt="">
+              LinkedIn
+            </span>
+          </a>
+          <a id="GitHub-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.25" target="_new"
+              href="https://github.com/alec-mitnik">
+            <span class="element-text">
+              <img src="./images/github-mark-white.svg" alt="">
+              GitHub
             </span>
           </a>
         </nav>
 
-        <div id="down-arrow"></div>
+        <div id="down-arrow" aria-hidden="true"></div>
       </div>
     </section>
     <section class="scroll-page template-page">
@@ -154,6 +154,13 @@
           <span class="element-text"><span aria-hidden="true">🔍&nbsp;</span>Context Lookups</span>
         </a>
       </nav>
+
+      <button id="kofi-button" class="bloom-button" data-hue="0" target="_new" onclick="openKofiDialog()">
+        <span class="element-text">
+          <img src="./images/kofi_symbol.svg" alt="">
+          Support My Projects
+        </span>
+      </button>
     </section>
   </main>
 </body>
