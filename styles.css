@@ -101,8 +101,11 @@ button {
   width: 100%;
 }
 
-#profile-picture-wrapper {
-  #profile-picture {
+#my-photo-wrapper {
+  max-width: 100%;
+  overflow: hidden;
+
+  #my-photo {
     width: 358px;
     height: 358px;
   }
