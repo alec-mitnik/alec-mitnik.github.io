@@ -66,12 +66,12 @@
 <script type="text/javascript">
   "use strict";
 
-  function openKofiDialog() {
-    document.getElementById("kofi-dialog").showModal();
+  function openSupportDialog() {
+    document.getElementById("support-dialog").showModal();
   }
 
-  function closeKofiDialog() {
-    document.getElementById("kofi-dialog").close();
+  function closeSupportDialog() {
+    document.getElementById("support-dialog").close();
   }
 </script>
 
@@ -79,17 +79,68 @@
 </head>
 
 <body>
-  <!-- Ko-fi tipping dialog -->
-  <dialog id="kofi-dialog" aria-label="Support My Projects" style="width: 350px; max-width: 100%; height: 675px; max-height: 100%;">
-    <div id="kofi-backdrop" class="modal-backdrop" onclick="closeKofiDialog()"></div>
-    <div class="modal">
-      <button autofocus class="close-button" aria-label="Close tipping dialog" onclick="closeKofiDialog()">
-        <span>❌&#65038;</span>
+  <!-- Support My Projects dialog -->
+  <dialog id="support-dialog" aria-label="Support My Projects">
+    <div class="modal-backdrop" onclick="closeSupportDialog()"></div>
+    <div id="modal-foreground">
+      <button autofocus class="close-button" aria-label="Close dialog" onclick="closeSupportDialog()">
+        <span aria-hidden="true">❌&#65038;</span>
       </button>
-      <iframe
-        src="https://ko-fi.com/alecmitnik/?hidefeed=true&widget=true&embed=true&preview=true"
-        style="border: none; border-radius: 8px; width: 100%; height: 100%;"
-      ></iframe>
+
+      <div id="donation-option-selection" class="column">
+        <div id="donation-options" role="radiogroup" aria-label="Donation Options">
+          <label>
+            <input id="venmo-option" type="radio" name="donation-option" value="venmo" aria-label="Venmo" aria-describedby="venmo-description" checked>
+            <img src="./images/Venmo-icon.svg" alt="">
+            <span aria-hidden="true">Venmo</span>
+          </label>
+          <label>
+            <input id="buymeacoffee-option" type="radio" name="donation-option" value="buymeacoffee" aria-label="Buy Me a Coffee" aria-describedby="buymeacoffee-description">
+            <img src="./images/coffee cup.svg" alt="">
+            <span aria-hidden="true">Buy Me a Coffee</span>
+          </label>
+          <label aria-label="Kofi">
+            <input id="ko-fi-option" type="radio" name="donation-option" value="ko-fi" aria-label="Kofi" aria-describedby="ko-fi-description">
+            <img src="./images/kofi_symbol.svg" alt="">
+            <span aria-hidden="true">Ko-fi</span>
+          </label>
+        </div>
+        <div id="donation-option-description">
+          <ul id="venmo-description">
+            <li>100% of your donation goes to me.</li>
+            <li>Requires donating externally with a Venmo account.</li>
+            <li>US only.</li>
+          </ul>
+          <ul id="buymeacoffee-description">
+            <li>95% of your donation goes to me.</li>
+            <li>A convenient, versatile option.</li>
+          </ul>
+          <ul id="ko-fi-description">
+            <li>Better suited for larger donations.</li>
+            <li>Another convenient option.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modal">
+        <div id="venmo-content" class="row">
+          <a id="venmo-link" href="https://venmo.com/u/Alec-Mitnik" target="_new" class="column gap-small padding-small">
+            <img src="./images/Venmo-logo.svg" alt="">
+            Support me through Venmo
+          </a>
+        </div>
+        <iframe
+          id="buymeacoffee-content"
+          allow="payment"
+          src="https://www.buymeacoffee.com/widget/page/alecmitnik"
+          style="border: none; width: 100%; height: 100%; background: url(&quot;https://cdn.buymeacoffee.com/assets/img/widget/loader.svg&quot;) center center / 64px no-repeat rgb(255, 255, 255);"
+        ></iframe>
+        <iframe
+          id="ko-fi-content"
+          src="https://ko-fi.com/alecmitnik/?hidefeed=true&widget=true&embed=true&preview=true"
+          style="border: none; width: 100%; height: 100%;"
+        ></iframe>
+      </div>
     </div>
   </dialog>
 
@@ -180,9 +231,9 @@
         </a>
       </nav>
 
-      <button id="kofi-button" class="bloom-button" data-hue="0" target="_new" onclick="openKofiDialog()">
+      <button id="support-button" class="bloom-button" data-hue="0" target="_new" onclick="openSupportDialog()">
         <span class="element-text">
-          <img src="./images/kofi_symbol.svg" alt="">
+          <span aria-hidden="true">🥰</span>
           Support My Projects
         </span>
       </button>
