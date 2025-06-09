@@ -71,6 +71,7 @@ h6 {
 }
 
 button {
+  cursor: pointer;
   font-family: inherit;
   font-size: inherit;
 }
@@ -274,7 +275,6 @@ button {
   border-radius: 2px;
   background: transparent;
   padding: 0.5rem 0.75rem;
-  cursor: pointer;
   font-size: inherit;
   font-weight: 500;
   max-width: 100%;
@@ -395,6 +395,7 @@ dialog#support-dialog {
 
     #donation-options {
       label {
+        position: relative;
         cursor: pointer;
         padding: 1rem 0.5rem;
         height: 100%;
@@ -412,12 +413,13 @@ dialog#support-dialog {
           margin-right: 0.5rem;
         }
 
+        /* Keep the focus outline visible */
         > input[type=radio] {
           appearance: none;
+          position: absolute;
+          inset: 0.25rem;
           margin: 0;
           padding: 0;
-          width: 0;
-          opacity: 0;
         }
       }
     }

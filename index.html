@@ -88,7 +88,7 @@
       </button>
 
       <div id="donation-option-selection" class="column">
-        <div id="donation-options" role="radiogroup" aria-label="Donation Options">
+        <div id="donation-options" role="radiogroup" aria-label="Tipping Options">
           <label>
             <input id="venmo-option" type="radio" name="donation-option" value="venmo" aria-label="Venmo" aria-describedby="venmo-description" checked>
             <img src="./images/Venmo-icon.svg" alt="">
@@ -107,12 +107,12 @@
         </div>
         <div id="donation-option-description">
           <ul id="venmo-description">
-            <li>100% of your donation goes to me.</li>
-            <li>Requires donating externally with a Venmo account.</li>
+            <li>100% of your tip goes to me.</li>
+            <li>Requires using a Venmo account externally.</li>
             <li>US only.</li>
           </ul>
           <ul id="buymeacoffee-description">
-            <li>95% of your donation goes to me.</li>
+            <li>95% of your tip goes to me.</li>
             <li>A convenient, versatile option.</li>
           </ul>
           <ul id="ko-fi-description">
@@ -123,7 +123,8 @@
       </div>
 
       <div class="modal">
-        <div id="venmo-content" class="row">
+        <!-- Keep a padding here so that the focus outline is visible -->
+        <div id="venmo-content" class="row padding-small">
           <a id="venmo-link" href="https://venmo.com/u/Alec-Mitnik" target="_new" class="column gap-small padding-small">
             <img src="./images/Venmo-logo.svg" alt="">
             Support me through Venmo
