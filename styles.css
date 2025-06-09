@@ -236,6 +236,7 @@ button {
 
     .element-text {
       justify-content: flex-start;
+      gap: 1rem;
 
       > span {
         font-size: 3rem;
