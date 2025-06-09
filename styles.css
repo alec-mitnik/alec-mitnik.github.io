@@ -10,7 +10,7 @@
 :root {
   height: 100%;
   font-family: Barlow, sans-serif;
-  font-size: clamp(50%, 0.5vw + 0.5rem, 100%);
+  font-size: clamp(75%, 0.5vw + 0.5rem, 100%);
   font-weight: 500;
   line-height: 1.5;
   color: white;
