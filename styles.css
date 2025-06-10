@@ -27,7 +27,7 @@ body {
 
 main {
   height: 100%;
-  overflow: auto;
+  overflow: hidden auto;
   scroll-padding: 2rem;
 }
 
@@ -95,7 +95,9 @@ button {
 .row, .column {
   display: flex;
   justify-content: safe center;
-  align-items: safe center;
+
+  /* Maintain centering over scrolling to overflow in the cross direction */
+  align-items: center;
 }
 
 .column {
@@ -120,7 +122,6 @@ button {
 
 #my-photo-wrapper {
   max-width: 100%;
-  overflow: hidden;
 
   #my-photo {
     width: 358px;
@@ -171,6 +172,7 @@ button {
 }
 
 .section-header {
+  text-align: center;
   filter: drop-shadow(0 0 4px black);
 }
 
@@ -190,6 +192,10 @@ button {
 
   &.scrolled::before {
     opacity: 0;
+  }
+
+  @media (height < 600px) {
+    display: none;
   }
 }
 
@@ -236,6 +242,7 @@ button {
 
     .element-text {
       justify-content: flex-start;
+      text-align: left;
       gap: 1rem;
 
       > span {
@@ -244,8 +251,11 @@ button {
 
       > div {
         align-items: flex-start;
+        flex: 1;
 
         > p {
+          max-width: 100%;
+
           &:first-child {
             font-size: 1.5rem;
             font-family: "Denk One", sans-serif;
@@ -451,6 +461,20 @@ dialog#support-dialog {
         border-radius: 8px;
       }
     }
+
+    > div {
+      height: 100%;
+      overflow: auto;
+
+      > a {
+        width: 100%;
+        min-height: 100%;
+
+        > img {
+          max-width: 100%;
+        }
+      }
+    }
   }
 
   .close-button {
@@ -481,20 +505,6 @@ dialog#support-dialog {
     > span {
       /* Make the emoji always appear black */
       filter: brightness(0);
-    }
-  }
-
-  #venmo-content {
-    height: 100%;
-    overflow: auto;
-
-    #venmo-link {
-      width: 100%;
-      min-height: 100%;
-
-      img {
-        max-width: 75%;
-      }
     }
   }
 }

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="description" content="My portfolio site, with links to my personal projects.  Feel free to get in touch!">
+
 <title>Alec Mitnik - Portfolio</title>
 
 <script type="module">
@@ -33,7 +34,8 @@
       }
     };
     bloomButton.onfocus = (event) => {
-      if (!Array.from(document.querySelectorAll(":hover")).includes(event.currentTarget)) {
+      if (!Array.from(document.querySelectorAll(":hover")).includes(event.currentTarget)
+          && Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
         ColorBloom.clearCanvas(event.currentTarget);
         ColorBloom.bloomColor({color: {h, l, s}, spawningElement: event.currentTarget, confineToSpawningElement: true});
       }
@@ -113,11 +115,13 @@
           </ul>
           <ul id="buymeacoffee-description">
             <li>95% of your tip goes to me.</li>
-            <li>A convenient, versatile option.</li>
+            <li>Payment is handled externally.</li>
+            <li>A versatile option with no other requirements.</li>
           </ul>
           <ul id="ko-fi-description">
             <li>Better suited for larger donations.</li>
-            <li>Another convenient option.</li>
+            <li>Payment can be handled internally.</li>
+            <li>A convenient option.</li>
           </ul>
         </div>
       </div>
@@ -125,17 +129,24 @@
       <div class="modal">
         <!-- Keep a padding here so that the focus outline is visible -->
         <div id="venmo-content" class="row padding-small">
-          <a id="venmo-link" href="https://venmo.com/u/Alec-Mitnik" target="_new" class="column gap-small padding-small">
-            <img src="./images/Venmo-logo.svg" alt="">
-            Support me through Venmo
+          <a id="venmo-link" href="https://venmo.com/u/Alec-Mitnik" target="_new" class="column gap-small"
+              aria-label="Support me through Venmo">
+            <img src="./images/Venmo-QR-code.webp" alt="">
           </a>
         </div>
-        <iframe
+        <!-- GitHub Pages doesn't allow the Payment Request API, which buymeacoffee uses -->
+        <!-- <iframe
           id="buymeacoffee-content"
           allow="payment"
           src="https://www.buymeacoffee.com/widget/page/alecmitnik"
           style="border: none; width: 100%; height: 100%; background: url(&quot;https://cdn.buymeacoffee.com/assets/img/widget/loader.svg&quot;) center center / 64px no-repeat rgb(255, 255, 255);"
-        ></iframe>
+        ></iframe> -->
+        <div id="buymeacoffee-content" class="row padding-small">
+          <a id="buymeacoffee-link" href="https://coff.ee/alecmitnik" target="_new" class="column gap-small"
+              aria-label="Support me through Buy Me a Coffee">
+            <img src="./images/BuyMeACoffee-QR-code.webp" alt="">
+          </a>
+        </div>
         <iframe
           id="ko-fi-content"
           src="https://ko-fi.com/alecmitnik/?hidefeed=true&widget=true&embed=true&preview=true"
