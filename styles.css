@@ -14,6 +14,8 @@
   font-weight: 500;
   line-height: 1.5;
   color: white;
+  /* Prevent pulling slightly up, then down on iOS from capturing this scroll instead of the main scroll */
+  overflow: hidden;
   /* Too jerky on iOS
   scroll-snap-type: both proximity;
   scroll-behavior: smooth; */
@@ -152,6 +154,7 @@ button {
   grid-template-rows: minmax(min-content, 1fr) minmax(min-content, auto) minmax(min-content, 1fr);
   grid-template-columns: 1fr;
   height: 100%;
+  /* This doesn't work in Firefox or iOS, but I don't have a better alternative */
   min-height: min-content;
 
   &.shrinking-center {
