@@ -234,7 +234,7 @@ button {
 }
 
 #project-links {
-  gap: 2rem;
+  gap: 1.5rem;
   max-width: 100%;
   flex-wrap: wrap;
   align-items: stretch;
