@@ -31,6 +31,16 @@ main {
   height: 100%;
   overflow: hidden auto;
   scroll-padding: 2rem;
+
+  #main-title, #personal-links-wrapper {
+    transition: opacity 1s ease;
+  }
+
+  &[inert] {
+    #main-title, #personal-links-wrapper {
+      opacity: 0;
+    }
+  }
 }
 
 p, ul, ol {
@@ -80,6 +90,10 @@ button {
 
 #color-bloom-canvas-wrapper {
   opacity: 0.25;
+
+  @media (prefers-reduced-motion: reduce) {
+    visibility: hidden;
+  }
 }
 
 .element-text {
@@ -130,9 +144,24 @@ button {
 #my-photo-wrapper {
   max-width: 100%;
 
-  #my-photo {
+  #my-photo, #my-photo-image {
     width: 358px;
     height: 358px;
+  }
+
+  #my-photo-image {
+    border-radius: 999999px;
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #my-photo {
+      display: none;
+    }
+
+    #my-photo-image {
+      display: block;
+    }
   }
 }
 
@@ -185,7 +214,7 @@ button {
 }
 
 #down-arrow {
-  padding-top: 4rem;
+  padding-top: 3rem;
 
   &::before {
     content: '▼';

@@ -13,6 +13,10 @@
 <script type="module">
   import * as ColorBloom from "https://alec-mitnik-color-bloom.netlify.app/color-bloom.js";
 
+  window.addEventListener("load", () => {
+    document.querySelector("main").inert = false;
+  });
+
   ColorBloom.bloomColor({color: {s: 0, l: 0}, triggerOnLoad: true, retriggerOnScreenSizeChange: true});
 
   const myPhoto = document.getElementById("my-photo");
@@ -159,18 +163,19 @@
     </div>
   </dialog>
 
-  <main>
+  <main inert>
     <section class="scroll-page template-page shrinking-center">
-      <header class="section-header column">
+      <header id="main-title" class="section-header column">
         <h1>Alec Mitnik</h1>
         <h2>Portfolio</h2>
       </header>
 
       <div id="my-photo-wrapper" class="column">
         <div id="my-photo"></div>
+        <img id="my-photo-image" src="./images/PXL_Avatar_1B.jpg" alt="Photo of me, Alec Mitnik">
       </div>
 
-      <div class="column full-width">
+      <div id="personal-links-wrapper" class="column full-width">
         <nav id="personal-links" class="row" aria-label="Personal Links">
           <a id="email-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75" target="_blank"
               href="mailto:alecmitnik@gmail.com">
