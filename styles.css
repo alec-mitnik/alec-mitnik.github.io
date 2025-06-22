@@ -205,6 +205,12 @@ button {
   @media (height < 600px) {
     display: none;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      animation: none;
+    }
+  }
 }
 
 @keyframes vertical-shake {
