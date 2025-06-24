@@ -34,12 +34,13 @@ main {
   scroll-padding: 2rem;
 
   #main-title, #personal-links-wrapper {
-    transition: opacity 1s ease;
+    transition: opacity 1s;
   }
 
   &[inert] {
     #main-title, #personal-links-wrapper {
       opacity: 0;
+      transition: none;
     }
   }
 }
