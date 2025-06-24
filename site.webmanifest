@@ -1,6 +1,7 @@
 {
   "name": "Alec Mitnik - Portfolio",
   "short_name": "Alec Portfolio",
+  "description": "Personal portfolio site for Alec Mitnik",
   "icons": [
     {
       "src": "/images/icons/android-chrome-192x192.png",
@@ -13,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "red",
+  "theme_color": "black",
+  "background_color": "black",
   "display": "standalone"
 }
