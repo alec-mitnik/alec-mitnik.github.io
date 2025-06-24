@@ -13,8 +13,8 @@
 <script type="module">
   import * as ColorBloom from "https://alec-mitnik-color-bloom.netlify.app/color-bloom.js";
 
-  window.addEventListener("load", () => {
-    document.querySelector("main").inert = false;
+  document.fonts.ready.then(() => {
+    document.querySelector('main').inert = false;
   });
 
   ColorBloom.bloomColor({color: {s: 0, l: 0}, triggerOnLoad: true, retriggerOnScreenSizeChange: true});
