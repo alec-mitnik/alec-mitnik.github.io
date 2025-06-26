@@ -193,6 +193,7 @@ button {
 
   &.shrinking-center {
     grid-template-rows: minmax(min-content, 1fr) minmax(0, auto) minmax(min-content, 1fr);
+    min-height: 650px;
   }
 
   .section-header {
@@ -231,7 +232,7 @@ button {
   &::before {
     content: '▼';
     display: inline-block;
-    font-size: 2rem;
+    font-size: 32px;
     opacity: 0.7;
     transition: opacity 0.5s;
     --transform-value: scaleX(4);
@@ -243,7 +244,7 @@ button {
     opacity: 0;
   }
 
-  @media (height < 600px) {
+  @media (height < 750px) {
     display: none;
   }
 
