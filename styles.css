@@ -177,7 +177,7 @@ button {
   align-items: center;
   width: 100%;
   min-height: 100%;
-  padding: 24px;
+  padding: 36px 24px;
   /* Too jerky on iOS
   scroll-snap-align: center; */
 }
@@ -186,16 +186,16 @@ button {
   display: grid;
   grid-template-rows: minmax(min-content, 1fr) minmax(min-content, auto) minmax(min-content, 1fr);
   grid-template-columns: 1fr;
-  height: 100%;
-  /* This doesn't work in Firefox or iOS, but I don't have a better alternative */
-  min-height: min-content;
+
+  &:first-child {
+    height: 100%;
+  }
 
   &.shrinking-center {
     grid-template-rows: minmax(min-content, 1fr) minmax(0, auto) minmax(min-content, 1fr);
   }
 
   .section-header {
-    padding-top: 12px;
     padding-bottom: 24px;
 
     @media (width <= 500px) {
@@ -226,6 +226,7 @@ button {
 
 #down-arrow {
   padding-top: 32px;
+  margin-bottom: -10px;
 
   &::before {
     content: '▼';
@@ -272,6 +273,9 @@ button {
 }
 
 #personal-links {
+  /* Estimate to give the same height as the heading
+  so that the photo stays centered at small heights */
+  padding-top: 5.375rem;
   gap: 16px;
   max-width: 100%;
   flex-wrap: wrap;
