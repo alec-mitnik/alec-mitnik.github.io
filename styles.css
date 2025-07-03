@@ -331,6 +331,8 @@ button {
               vertical-align: bottom;
               overflow: hidden;
               pointer-events: none;
+              position: relative;
+              z-index: -1;
             }
           }
         }
