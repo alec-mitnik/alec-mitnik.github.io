@@ -19,12 +19,34 @@
 
 <title>Alec Mitnik - Portfolio</title>
 
-<script type="module">
-  import * as ColorBloom from "https://alec-mitnik-color-bloom.netlify.app/color-bloom.js";
+<script type="text/javascript">
+  "use strict";
 
   document.fonts.ready.then(() => {
     document.querySelector('main').inert = false;
   });
+
+  document.querySelector("main").addEventListener("scroll", (event) => {
+    const downArrow = document.getElementById("down-arrow");
+
+    if (event.currentTarget.scrollTop > 0) {
+      downArrow.classList.add("scrolled");
+    } else {
+      downArrow.classList.remove("scrolled");
+    }
+  });
+
+  function openSupportDialog() {
+    document.getElementById("support-dialog").showModal();
+  }
+
+  function closeSupportDialog() {
+    document.getElementById("support-dialog").close();
+  }
+</script>
+
+<script type="module">
+  import * as ColorBloom from "https://alec-mitnik-color-bloom.netlify.app/color-bloom.js";
 
   ColorBloom.bloomColor({color: {s: 0, l: 0}, triggerOnLoad: true, retriggerOnScreenSizeChange: true});
 
@@ -68,28 +90,6 @@
         ColorBloom.bloomErase({spawningElement: event.currentTarget});
       }
     };
-  }
-
-  document.querySelector("main").addEventListener("scroll", (event) => {
-    const downArrow = document.getElementById("down-arrow");
-
-    if (event.currentTarget.scrollTop > 0) {
-      downArrow.classList.add("scrolled");
-    } else {
-      downArrow.classList.remove("scrolled");
-    }
-  });
-</script>
-
-<script type="text/javascript">
-  "use strict";
-
-  function openSupportDialog() {
-    document.getElementById("support-dialog").showModal();
-  }
-
-  function closeSupportDialog() {
-    document.getElementById("support-dialog").close();
   }
 </script>
 </head>
