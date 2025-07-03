@@ -314,7 +314,7 @@ button {
         align-items: flex-start;
         flex-wrap: wrap;
 
-        > p {
+        > span {
           max-width: 100%;
 
           &:first-child {
@@ -490,6 +490,9 @@ dialog#support-dialog {
           appearance: none;
           position: absolute;
           inset: 4px;
+          width: calc(100% - 8px);
+          height: calc(100% - 8px);
+          border-radius: 0;
           margin: 0;
           padding: 0;
           pointer-events: none;

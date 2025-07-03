@@ -23,18 +23,20 @@
   "use strict";
 
   document.fonts.ready.then(() => {
-    document.querySelector('main').inert = false;
+    document.querySelector("main").inert = false;
   });
 
-  document.querySelector("main").addEventListener("scroll", (event) => {
-    const downArrow = document.getElementById("down-arrow");
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("main").addEventListener("scroll", (event) => {
+      const downArrow = document.getElementById("down-arrow");
 
-    if (event.currentTarget.scrollTop > 0) {
-      downArrow.classList.add("scrolled");
-    } else {
-      downArrow.classList.remove("scrolled");
-    }
-  });
+      if (event.currentTarget.scrollTop > 0) {
+        downArrow.classList.add("scrolled");
+      } else {
+        downArrow.classList.remove("scrolled");
+      }
+    });
+  })
 
   function openSupportDialog() {
     document.getElementById("support-dialog").showModal();
@@ -221,8 +223,8 @@
           <div class="element-text">
             <span aria-hidden="true">🧩</span>
             <div class="column">
-              <p>Infinite Puzzles</p>
-              <p>Puzzle games web app</p>
+              <span>Infinite Puzzles</span>
+              <span>Puzzle games web app</span>
             </div>
           </div>
         </a>
@@ -231,8 +233,8 @@
           <div class="element-text">
             <span aria-hidden="true">🌼</span>
             <div class="column">
-              <p>Take a Hike</p>
-              <p>Hiking/exploration web game</p>
+              <span>Take a Hike</span>
+              <span>Hiking/exploration web game</span>
             </div>
           </div>
         </a>
@@ -241,8 +243,8 @@
           <div class="element-text">
             <span aria-hidden="true">🎨</span>
             <div class="column">
-              <p>Color Bloom Art Maker</p>
-              <p>Make special images/wallpapers</p>
+              <span>Color Bloom Art Maker</span>
+              <span>Make special images/wallpapers</span>
             </div>
           </div>
         </a>
@@ -251,8 +253,8 @@
           <div class="element-text">
             <span aria-hidden="true">🔍</span>
             <div class="column">
-              <p>Context Lookups</p>
-              <p>Configurable extension for Chrome</p>
+              <span>Context Lookups</span>
+              <span>Configurable extension for Chrome</span>
             </div>
           </div>
         </a>
