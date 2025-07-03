@@ -330,6 +330,7 @@ button {
               display: inline-block;
               vertical-align: bottom;
               overflow: hidden;
+              pointer-events: none;
             }
           }
         }
