@@ -469,7 +469,7 @@ dialog#support-dialog {
         display: none;
       }
 
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-contrast: more) {
         &.dark-mode {
           display: inline;
         }
@@ -503,7 +503,7 @@ dialog#support-dialog {
         &:has(input:not(:checked)) {
           background: #ddd;
 
-          @media (prefers-color-scheme: dark) {
+          @media (prefers-contrast: more) {
             filter: invert(0.125);
           }
         }
@@ -567,7 +567,7 @@ dialog#support-dialog {
         > img {
           max-width: 100%;
 
-          @media (prefers-color-scheme: dark) {
+          @media (prefers-contrast: more) {
             filter: invert(0.875);
           }
         }
@@ -607,7 +607,7 @@ dialog#support-dialog {
       /* Make the emoji always appear black */
       filter: brightness(0);
 
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-contrast: more) {
         filter: brightness(0) invert(1);
       }
     }
