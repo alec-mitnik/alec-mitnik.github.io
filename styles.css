@@ -431,6 +431,7 @@ dialog#support-dialog {
     gap: 16px;
     height: 100%;
     background: #eee;
+    border: 1px solid #ddd;
     border-radius: 8px;
   }
 
@@ -463,6 +464,19 @@ dialog#support-dialog {
 
     img {
       height: 1.25rem;
+
+      &.dark-mode {
+        display: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        &.dark-mode {
+          display: inline;
+        }
+        &.light-mode {
+          display: none;
+        }
+      }
     }
 
     > div {
@@ -488,6 +502,10 @@ dialog#support-dialog {
 
         &:has(input:not(:checked)) {
           background: #ddd;
+
+          @media (prefers-color-scheme: dark) {
+            filter: invert(0.125);
+          }
         }
 
         /* Keep the focus outline visible */
@@ -548,6 +566,10 @@ dialog#support-dialog {
 
         > img {
           max-width: 100%;
+
+          @media (prefers-color-scheme: dark) {
+            filter: invert(0.875);
+          }
         }
       }
     }
@@ -580,9 +602,14 @@ dialog#support-dialog {
       }
     }
 
-    > span {
+    > span::before {
+      content: '❌' / '';
       /* Make the emoji always appear black */
       filter: brightness(0);
+
+      @media (prefers-color-scheme: dark) {
+        filter: brightness(0) invert(1);
+      }
     }
   }
 }

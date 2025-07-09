@@ -102,24 +102,25 @@
     <div class="modal-backdrop" onclick="closeSupportDialog()"></div>
     <div id="modal-foreground">
       <button autofocus class="close-button" aria-label="Close dialog" onclick="closeSupportDialog()">
-        <span aria-hidden="true">❌</span>
+        <span aria-hidden="true"></span>
       </button>
 
       <div id="donation-option-selection" class="column">
         <div id="donation-options" role="radiogroup" aria-label="Tipping Options">
           <label>
             <input id="venmo-option" type="radio" name="donation-option" value="venmo" aria-label="Venmo" aria-describedby="venmo-description" checked>
-            <img src="./images/Venmo-icon.svg" alt="">
+            <img src="./images/Venmo-icon.svg" alt="" draggable="false">
             <span aria-hidden="true">Venmo</span>
           </label>
           <label>
             <input id="buymeacoffee-option" type="radio" name="donation-option" value="buymeacoffee" aria-label="Buy Me a Coffee" aria-describedby="buymeacoffee-description">
-            <img src="./images/coffee cup.svg" alt="">
+            <img class="light-mode" src="./images/coffee-cup.svg" alt="" draggable="false">
+            <img class="dark-mode" src="./images/coffee-cup-white.svg" alt="" draggable="false">
             <span aria-hidden="true">Buy Me a Coffee</span>
           </label>
           <label aria-label="Kofi">
             <input id="ko-fi-option" type="radio" name="donation-option" value="ko-fi" aria-label="Kofi" aria-describedby="ko-fi-description">
-            <img src="./images/kofi_symbol.svg" alt="">
+            <img src="./images/kofi_symbol.svg" alt="" draggable="false">
             <span aria-hidden="true">Ko-fi</span>
           </label>
         </div>
@@ -186,21 +187,21 @@
 
       <div id="personal-links-wrapper" class="column full-width">
         <nav id="personal-links" class="row" aria-label="Personal Links">
-          <a id="email-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75" target="_blank"
+          <a id="email-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75"
               href="mailto:alecmitnik@gmail.com">
             <span class="element-text">
               <img src="./images/envelope-34339.svg" alt="" draggable="false">
               Email
             </span>
           </a>
-          <a id="LinkedIn-link" class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4" target="_blank"
+          <a id="LinkedIn-link" class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4"
               href="https://www.linkedin.com/in/alec-mitnik/">
             <span class="element-text">
               <img src="./images/LinkedIn_icon.svg" alt="" draggable="false">
               LinkedIn
             </span>
           </a>
-          <a id="GitHub-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.25" target="_blank"
+          <a id="GitHub-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.25"
               href="https://github.com/alec-mitnik">
             <span class="element-text">
               <img src="./images/github-mark-white.svg" alt="" draggable="false">
@@ -218,7 +219,7 @@
       </header>
 
       <nav id="project-links" class="row" aria-labelledby="project-links-header">
-        <a id="infinite-puzzles-link" class="bloom-button" target="_blank"
+        <a id="infinite-puzzles-link" class="bloom-button"
             href="https://alec-mitnik-infinite-puzzles.netlify.app/">
           <div class="element-text">
             <span aria-hidden="true">🧩</span>
@@ -228,7 +229,7 @@
             </div>
           </div>
         </a>
-        <a id="take-a-hike-link" class="bloom-button" target="_blank"
+        <a id="take-a-hike-link" class="bloom-button"
             href="https://alec-mitnik-take-a-hike.netlify.app/">
           <div class="element-text">
             <span aria-hidden="true">🌼</span>
@@ -238,7 +239,7 @@
             </div>
           </div>
         </a>
-        <a id="take-a-hike-link" class="bloom-button" target="_blank"
+        <a id="take-a-hike-link" class="bloom-button"
             href="https://alec-mitnik-color-bloom.netlify.app/art.html">
           <div class="element-text">
             <span aria-hidden="true">🎨</span>
@@ -248,7 +249,7 @@
             </div>
           </div>
         </a>
-        <a id="context-lookups-link" class="bloom-button" target="_blank"
+        <a id="context-lookups-link" class="bloom-button"
             href="https://chromewebstore.google.com/detail/context-lookups/pdpcaajpbemllmagmijafgcnpmlbhhjd">
           <div class="element-text">
             <span aria-hidden="true">🔍</span>
