@@ -296,6 +296,7 @@ button {
       /* Match the outline for links */
       outline-offset: 1px;
       width: 100%;
+      cursor: pointer;
     }
 
     &[open] summary > div > span {
