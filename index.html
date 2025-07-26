@@ -112,29 +112,34 @@
             <img src="./images/Venmo-icon.svg" alt="" draggable="false">
             <span aria-hidden="true">Venmo</span>
           </label>
+
           <label>
             <input id="buymeacoffee-option" type="radio" name="donation-option" value="buymeacoffee" aria-label="Buy Me a Coffee" aria-describedby="buymeacoffee-description">
             <img class="light-mode" src="./images/coffee-cup.svg" alt="" draggable="false">
             <img class="dark-mode" src="./images/coffee-cup-white.svg" alt="" draggable="false">
             <span aria-hidden="true">Buy Me a Coffee</span>
           </label>
+
           <label aria-label="Kofi">
             <input id="ko-fi-option" type="radio" name="donation-option" value="ko-fi" aria-label="Kofi" aria-describedby="ko-fi-description">
             <img src="./images/kofi_symbol.svg" alt="" draggable="false">
             <span aria-hidden="true">Ko-fi</span>
           </label>
         </div>
+
         <div id="donation-option-description">
           <ul id="venmo-description">
             <li>100% of your tip goes to me.</li>
             <li>Requires using a Venmo account externally.</li>
             <li>US only.</li>
           </ul>
+
           <ul id="buymeacoffee-description">
             <li>95% of your tip goes to me.</li>
             <li>Payment is handled externally.</li>
             <li>A versatile option with no other requirements.</li>
           </ul>
+
           <ul id="ko-fi-description">
             <li>Better suited for larger donations.</li>
             <li>Payment can be handled internally.</li>
@@ -151,6 +156,7 @@
             <img src="./images/Venmo-QR-code.webp" alt="">
           </a>
         </div>
+
         <!-- GitHub Pages doesn't allow the Payment Request API, which buymeacoffee uses -->
         <!-- <iframe
           id="buymeacoffee-content"
@@ -164,6 +170,7 @@
             <img src="./images/BuyMeACoffee-QR-code.webp" alt="">
           </a>
         </div>
+
         <iframe
           id="ko-fi-content"
           src="https://ko-fi.com/alecmitnik/?hidefeed=true&widget=true&embed=true&preview=true"
@@ -187,21 +194,23 @@
 
       <div id="personal-links-wrapper" class="column full-width">
         <nav id="personal-links" class="row" aria-label="Personal Links">
-          <a id="email-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75"
+          <a class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.75"
               href="mailto:alecmitnik@gmail.com">
             <span class="element-text">
               <img src="./images/envelope-34339.svg" alt="" draggable="false">
               Email
             </span>
           </a>
-          <a id="LinkedIn-link" class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4"
+
+          <a class="bloom-button" data-hue="200" data-saturation="0.9" data-lightness="0.4"
               href="https://www.linkedin.com/in/alec-mitnik/">
             <span class="element-text">
               <img src="./images/LinkedIn_icon.svg" alt="" draggable="false">
               LinkedIn
             </span>
           </a>
-          <a id="GitHub-link" class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.25"
+
+          <a class="bloom-button" data-hue="180" data-saturation="0.25" data-lightness="0.25"
               href="https://github.com/alec-mitnik">
             <span class="element-text">
               <img src="./images/github-mark-white.svg" alt="" draggable="false">
@@ -213,52 +222,96 @@
         <div id="down-arrow" aria-hidden="true"></div>
       </div>
     </section>
+
     <section class="scroll-page template-page">
       <header class="section-header column">
         <h2 id="project-links-header">Project Links</h2>
       </header>
 
       <nav id="project-links" class="row" aria-labelledby="project-links-header">
-        <a id="infinite-puzzles-link" class="bloom-button"
+        <a class="bloom-button"
             href="https://alec-mitnik-infinite-puzzles.netlify.app/">
           <div class="element-text">
-            <span aria-hidden="true">🧩</span>
+            <span aria-hidden="true">
+              <span>🧩</span>
+            </span>
             <div class="column">
               <span>Infinite Puzzles</span>
               <span>Puzzle games web app</span>
             </div>
           </div>
         </a>
-        <a id="take-a-hike-link" class="bloom-button"
+
+        <a class="bloom-button"
             href="https://alec-mitnik-take-a-hike.netlify.app/">
           <div class="element-text">
-            <span aria-hidden="true">🌼</span>
+            <span aria-hidden="true">
+              <span>🌼</span>
+            </span>
             <div class="column">
               <span>Take a Hike</span>
               <span>Hiking/exploration web game</span>
             </div>
           </div>
         </a>
-        <a id="take-a-hike-link" class="bloom-button"
+
+        <a class="bloom-button"
             href="https://alec-mitnik-color-bloom.netlify.app/art.html">
           <div class="element-text">
-            <span aria-hidden="true">🎨</span>
+            <span aria-hidden="true">
+              <span>🎨</span>
+            </span>
             <div class="column">
               <span>Color Bloom Art Maker</span>
               <span>Make special images/wallpapers</span>
             </div>
           </div>
         </a>
-        <a id="context-lookups-link" class="bloom-button"
-            href="https://chromewebstore.google.com/detail/context-lookups/pdpcaajpbemllmagmijafgcnpmlbhhjd">
-          <div class="element-text">
-            <span aria-hidden="true">🔍</span>
-            <div class="column">
-              <span>Context Lookups</span>
-              <span>Configurable extension for Chrome</span>
+
+        <details name="project-link">
+          <summary class="bloom-button">
+            <div class="element-text">
+              <span aria-hidden="true">
+                <span>🔍</span>
+              </span>
+              <div class="column">
+                <span>Context Lookups</span>
+                <span>Configurable browser extension</span>
+              </div>
             </div>
+          </summary>
+
+          <div class="project-links-details-content">
+            <a class="bloom-button" data-hue="45" data-saturation="0.97" data-lightness="0.53"
+                href="https://chromewebstore.google.com/detail/context-lookups/pdpcaajpbemllmagmijafgcnpmlbhhjd">
+              <span class="element-text">
+                <img src="./images/browser-icon_Google-Chrome.svg" alt="Google Chrome" draggable="false">
+              </span>
+            </a>
+
+            <a class="bloom-button" data-hue="184" data-saturation="0.85" data-lightness="0.4"
+                href="https://microsoftedge.microsoft.com/addons/detail/context-lookups/clghfbkgefieiedbkeapicjchelbbkjd">
+              <span class="element-text">
+                <img src="./images/browser-icon_Microsoft-Edge.svg" alt="Microsoft Edge" draggable="false">
+              </span>
+            </a>
+
+            <a class="bloom-button" data-hue="14" data-saturation="0.95" data-lightness="0.61"
+                href="https://addons.mozilla.org/en-US/firefox/addon/context-lookups/">
+              <span class="element-text">
+                <img src="./images/browser-icon_Firefox.svg" alt="Firefox" draggable="false">
+              </span>
+            </a>
+
+            <!-- Pending review -->
+            <!-- <a class="bloom-button" data-hue="355" data-saturation="1" data-lightness="0.55"
+                href="https://addons.mozilla.org/en-US/firefox/addon/context-lookups/">
+              <span class="element-text">
+                <img src="./images/browser-icon_Opera.svg" alt="Opera" draggable="false">
+              </span>
+            </a> -->
           </div>
-        </a>
+        </details>
       </nav>
 
       <button id="support-button" class="bloom-button" data-hue="0" onclick="openSupportDialog()">

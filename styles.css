@@ -291,6 +291,49 @@ button {
   align-items: stretch;
   flex-direction: column;
 
+  details {
+    summary {
+      /* Match the outline for links */
+      outline-offset: 1px;
+      width: 100%;
+    }
+
+    &[open] summary > div > span {
+      > span {
+        opacity: 0;
+      }
+
+      &::before {
+        content: '▼' / '';
+        position: absolute;
+      }
+    }
+  }
+
+  .project-links-details-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-block: 16px;
+    gap: 16px;
+
+    .bloom-button {
+      flex: 0 0 auto;
+      padding: 8px;
+      border-radius: 99999px;
+      overflow: hidden;
+
+      .element-text {
+        padding: 8px;
+        border-radius: 99999px;
+
+        img {
+          height: 2rem;
+        }
+      }
+    }
+  }
+
   .bloom-button {
     flex: 1 1 0;
     min-width: auto;
@@ -307,6 +350,11 @@ button {
       align-content: flex-start;
 
       > span {
+        /* Support replacement with down arrow for details summary elements */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 3rem;
       }
 
