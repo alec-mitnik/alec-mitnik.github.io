@@ -85,6 +85,10 @@ h6 {
 }
 
 button {
+  /* Easy CSS reset */
+  all: unset;
+  outline: revert;
+
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
@@ -395,7 +399,6 @@ button {
   position: relative;
   display: inline-block;
   user-select: none;
-  appearance: none;
   border: 1px solid white;
   border-radius: 2px;
   background: transparent;
@@ -559,14 +562,14 @@ dialog#support-dialog {
 
         /* Keep the focus outline visible */
         > input[type=radio] {
-          appearance: none;
+          /* Easy CSS reset */
+          all: unset;
+          outline: revert;
+
           position: absolute;
           inset: 4px;
           width: calc(100% - 8px);
           height: calc(100% - 8px);
-          border-radius: 0;
-          margin: 0;
-          padding: 0;
           pointer-events: none;
         }
 
