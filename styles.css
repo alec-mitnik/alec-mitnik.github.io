@@ -231,22 +231,45 @@ button {
 }
 
 #down-arrow {
+  /* all: unset; */
+  cursor: pointer;
+  margin: 0 -24px -36px;
+  width: calc(2 * 22px + 100%);
+  max-width: 500px;
+  border-radius: 99999px;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.5s, visibility 0s 0s allow-discrete;
   padding-top: 32px;
-  margin-bottom: -10px;
+  padding-bottom: 26px;
 
   &::before {
     content: '▼';
     display: inline-block;
     font-size: 32px;
-    opacity: 0.5;
-    transition: opacity 0.5s;
+
     --transform-value: scaleX(3.5);
     transform: var(--transform-value);
     animation: vertical-shake 2s infinite;
   }
 
-  &.scrolled::before {
+  &.scrolled {
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s 0.5s allow-discrete;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: rgba(255 255 255 / 0.15);
+
+      &::before {
+        --transform-value: scaleX(4.5);
+      }
+    }
   }
 
   @media (height < 750px) {
@@ -343,7 +366,7 @@ button {
     flex: 1 1 0;
     min-width: auto;
     min-height: auto;
-    padding: 12px 16px;
+    padding: 9px 12px;
     border-width: 2px;
     border-radius: 4px;
 
@@ -353,6 +376,7 @@ button {
       gap: 16px;
       flex-wrap: wrap;
       align-content: flex-start;
+      padding: 0 10px;
 
       > span {
         /* Support replacement with down arrow for details summary elements */

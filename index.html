@@ -38,6 +38,10 @@
     });
   })
 
+  function scrollToProjects() {
+    document.getElementById("project-links-header").scrollIntoView({behavior: "smooth"});
+  }
+
   function openSupportDialog() {
     document.getElementById("support-dialog").showModal();
   }
@@ -219,7 +223,9 @@
           </a>
         </nav>
 
-        <div id="down-arrow" aria-hidden="true"></div>
+        <!-- Deliberately not a button so that it can never receive focus
+        (causing the page to scroll down slightly and hide the arrow) -->
+        <div id="down-arrow" aria-hidden="true" onclick="scrollToProjects()"></div>
       </div>
     </section>
 
