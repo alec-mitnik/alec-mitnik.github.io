@@ -39,7 +39,10 @@
   })
 
   function scrollToProjects() {
-    document.getElementById("project-links-header").scrollIntoView(/* {behavior: "smooth"} */);
+    // Android fix
+    setTimeout(() => {
+      document.getElementById("project-links-header").scrollIntoView({behavior: "smooth"});
+    }, 50);
   }
 
   function openSupportDialog() {
