@@ -43,7 +43,11 @@
     setTimeout(() => {
       // Rely on scroll-behavior CSS style instead, as the behavior option parameter
       // doesn't work on Android, but the CSS property does
-      document.getElementById("project-links-header").scrollIntoView({behavior: "smooth"});
+      // document.getElementById("project-links-header").scrollIntoView({behavior: "smooth"});
+
+      document.querySelector("main").scrollTo({
+        top: document.querySelectorAll(".scroll-page")[1].getBoundingClientRect().top,
+      });
     }, 50);
   }
 
