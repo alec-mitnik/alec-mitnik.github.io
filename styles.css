@@ -16,9 +16,6 @@
   color: white;
   /* Prevent pulling slightly up, then down on iOS from capturing this scroll instead of the main scroll */
   overflow: hidden;
-  /* Too jerky on iOS
-  scroll-snap-type: both proximity;
-  scroll-behavior: smooth; */
   overflow-wrap: anywhere;
 }
 
@@ -33,6 +30,9 @@ main {
   overflow: hidden auto;
   scroll-padding: 2rem;
   scroll-behavior: smooth;
+
+  /* Too jerky on iOS
+  scroll-snap-type: both proximity; */
 
   #main-title, #personal-links-wrapper {
     transition: opacity 1s;
@@ -257,11 +257,11 @@ button {
     animation: vertical-shake 2s infinite;
   }
 
-  /* &.scrolled {
+  &.scrolled {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s, visibility 0s 0.5s allow-discrete;
-  } */
+  }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -273,9 +273,9 @@ button {
     }
   }
 
-  /* @media (height < 750px) {
+  @media (height < 700px) {
     display: none;
-  } */
+  }
 
   @media (prefers-reduced-motion: reduce) {
     &::before {
