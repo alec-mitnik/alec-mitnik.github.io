@@ -257,11 +257,11 @@ button {
     animation: vertical-shake 2s infinite;
   }
 
-  &.scrolled {
+  /* &.scrolled {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s, visibility 0s 0.5s allow-discrete;
-  }
+  } */
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
