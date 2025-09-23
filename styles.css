@@ -32,6 +32,7 @@ main {
   height: 100%;
   overflow: hidden auto;
   scroll-padding: 2rem;
+  scroll-behavior: smooth;
 
   #main-title, #personal-links-wrapper {
     transition: opacity 1s;

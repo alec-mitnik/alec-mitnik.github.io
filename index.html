@@ -39,10 +39,12 @@
   })
 
   function scrollToProjects() {
-    // Android fix
+    // Android needs a delay or else it won't scroll properly
     setTimeout(() => {
-      document.getElementById("project-links-header").scrollIntoView({behavior: "smooth"});
-    }, 50);
+      // Rely on scroll-behavior CSS style instead, as the behavior option parameter
+      // doesn't work on Android, but the CSS property does
+      document.getElementById("project-links-header").scrollIntoView(/* {behavior: "smooth"} */);
+    });
   }
 
   function openSupportDialog() {
