@@ -39,16 +39,13 @@
   })
 
   function scrollToProjects() {
-    // Android needs a delay or else it won't scroll properly
-    setTimeout(() => {
-      // Rely on scroll-behavior CSS style instead, as the behavior option parameter
-      // doesn't work on Android, but the CSS property does
-      // document.getElementById("project-links-header").scrollIntoView({behavior: "smooth"});
+    const main = document.querySelector("main");
+    const page2 = document.querySelectorAll(".scroll-page")[1];
 
-      const main = document.querySelector("main");
-      main.scrollTo({
-        top: main.scrollTop + document.querySelectorAll(".scroll-page")[1].getBoundingClientRect().top,
-      });
+    // scrollIntoView with smooth behavior isn't working on Android,
+    // so use scrollTo instead (with the scroll-behavior style set to smooth)
+    main.scrollTo({
+      top: main.scrollTop + page2.getBoundingClientRect().top,
     });
   }
 
