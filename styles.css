@@ -272,9 +272,9 @@ button {
     }
   }
 
-  @media (height < 750px) {
+  /* @media (height < 750px) {
     display: none;
-  }
+  } */
 
   @media (prefers-reduced-motion: reduce) {
     &::before {
