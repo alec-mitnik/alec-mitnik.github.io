@@ -273,7 +273,8 @@ button {
     }
   }
 
-  @media (height < 700px) {
+  /* iOS Safari on my iPhone 14 has an innerHeight of 699 */
+  @media (height < 690px) {
     display: none;
   }
 
