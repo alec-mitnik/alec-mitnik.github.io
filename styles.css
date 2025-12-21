@@ -273,8 +273,8 @@ button {
     }
   }
 
-  /* iOS Safari on my iPhone 14 has an innerHeight of 699 */
-  @media (height < 690px) {
+  /* On my iPhone Safari browser, the viewport is 390px x 663px */
+  @media (height < 660px) {
     display: none;
   }
 
