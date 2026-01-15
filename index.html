@@ -24,8 +24,7 @@
 
   /* TODO
    *
-   * Long delay at start for arrow button on mobile?
-   * Bloom focus detection not working right on mobile?
+   *
    *
    */
 
@@ -64,12 +63,13 @@
   }
 
   function openSupportDialog() {
-    const koFiContent = document.getElementById("ko-fi-content");
+    // Ko-fi just isn't worth keeping as an option
+    /* const koFiContent = document.getElementById("ko-fi-content");
 
     if (!koFiContent.src) {
       koFiContent.src =
           "https://ko-fi.com/alecmitnik/?hidefeed=true&widget=true&embed=true&preview=true";
-    }
+    } */
 
     document.getElementById("support-dialog").showModal();
   }
@@ -157,11 +157,12 @@
             <span aria-hidden="true">Buy Me a Coffee</span>
           </label>
 
-          <label aria-label="Kofi">
+          <!-- Ko-fi just isn't worth keeping as an option -->
+          <!-- <label aria-label="Kofi">
             <input id="ko-fi-option" type="radio" name="donation-option" value="ko-fi" aria-label="Kofi" aria-describedby="ko-fi-description">
             <img src="./images/kofi_symbol.svg" alt="" draggable="false">
             <span aria-hidden="true">Ko-fi</span>
-          </label>
+          </label> -->
         </div>
 
         <div id="donation-option-description">
@@ -177,11 +178,12 @@
             <li>A versatile option with no other requirements.</li>
           </ul>
 
-          <ul id="ko-fi-description">
+          <!-- Ko-fi just isn't worth keeping as an option -->
+          <!-- <ul id="ko-fi-description">
             <li>Better suited for larger donations.</li>
             <li>Payment can be handled internally.</li>
             <li>A convenient option.</li>
-          </ul>
+          </ul> -->
         </div>
       </div>
 
@@ -208,11 +210,15 @@
           </a>
         </div>
 
-        <!-- Causes console errors, so don't set the src until the dialog is actually opened -->
-        <iframe
+        <!-- Causes console errors, so don't set the src until the dialog is actually opened.
+        Setting the src also causes freezing for several seconds on mobile, and the iframe
+        handles keyboard navigation poorly too.  I could make it an external link instead,
+        but it takes a bigger cut than buymeacoffee for small donations,
+        so it's just not worth keeping as an option. -->
+        <!-- <iframe
           id="ko-fi-content"
           style="border: none; width: 100%; height: 100%;"
-        ></iframe>
+        ></iframe> -->
       </div>
     </div>
   </dialog>
