@@ -22,20 +22,34 @@
 <script type="text/javascript">
   "use strict";
 
+  /* TODO
+   *
+   * Long delay at start for arrow button on mobile?
+   * Bloom focus detection not working right on mobile?
+   *
+   */
+
   document.fonts.ready.then(() => {
     document.querySelector("main").inert = false;
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("main").addEventListener("scroll", (event) => {
-      const downArrow = document.getElementById("down-arrow");
+    const mainElement = document.querySelector("main");
+    const downArrow = document.getElementById("down-arrow");
 
-      if (event.currentTarget.scrollTop > 0) {
+    function updateDownArrow() {
+      if (mainElement.scrollTop > 0) {
         downArrow.classList.add("scrolled");
       } else {
         downArrow.classList.remove("scrolled");
       }
+    }
+
+    mainElement.addEventListener("scroll", () => {
+      updateDownArrow();
     });
+
+    updateDownArrow();
   })
 
   function scrollToProjects() {
@@ -50,6 +64,13 @@
   }
 
   function openSupportDialog() {
+    const koFiContent = document.getElementById("ko-fi-content");
+
+    if (!koFiContent.src) {
+      koFiContent.src =
+          "https://ko-fi.com/alecmitnik/?hidefeed=true&widget=true&embed=true&preview=true";
+    }
+
     document.getElementById("support-dialog").showModal();
   }
 
@@ -78,23 +99,28 @@
     const l = bloomButton.dataset.lightness != null ? parseFloat(bloomButton.dataset.lightness) : undefined;
     const s = bloomButton.dataset.saturation != null ? parseFloat(bloomButton.dataset.saturation) : undefined;
 
-    bloomButton.onmouseenter = (event) => {
-      if (!Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
-        ColorBloom.clearCanvas(event.currentTarget);
-        ColorBloom.bloomColor({color: {h, l, s}, spawningElement: event.currentTarget, confineToSpawningElement: true});
-      }
-    };
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      bloomButton.onmouseenter = (event) => {
+        if (!Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
+          ColorBloom.clearCanvas(event.currentTarget);
+          ColorBloom.bloomColor({color: {h, l, s},
+              spawningElement: event.currentTarget, confineToSpawningElement: true});
+        }
+      };
+      bloomButton.onmouseleave = () => {
+        if (!Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
+          ColorBloom.stopBlooming(event.currentTarget);
+          ColorBloom.bloomErase({spawningElement: event.currentTarget});
+        }
+      };
+    }
+
     bloomButton.onfocus = (event) => {
       if (!Array.from(document.querySelectorAll(":hover")).includes(event.currentTarget)
           && Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
         ColorBloom.clearCanvas(event.currentTarget);
-        ColorBloom.bloomColor({color: {h, l, s}, spawningElement: event.currentTarget, confineToSpawningElement: true});
-      }
-    };
-    bloomButton.onmouseleave = () => {
-      if (!Array.from(document.querySelectorAll(":focus-visible")).includes(event.currentTarget)) {
-        ColorBloom.stopBlooming(event.currentTarget);
-        ColorBloom.bloomErase({spawningElement: event.currentTarget});
+        ColorBloom.bloomColor({color: {h, l, s},
+            spawningElement: event.currentTarget, confineToSpawningElement: true});
       }
     };
     bloomButton.onblur = () => {
@@ -182,9 +208,9 @@
           </a>
         </div>
 
+        <!-- Causes console errors, so don't set the src until the dialog is actually opened -->
         <iframe
           id="ko-fi-content"
-          src="https://ko-fi.com/alecmitnik/?hidefeed=true&widget=true&embed=true&preview=true"
           style="border: none; width: 100%; height: 100%;"
         ></iframe>
       </div>
@@ -231,8 +257,9 @@
         </nav>
 
         <!-- Deliberately not a button so that it can never receive focus
-        (causing the page to scroll down slightly and hide the arrow) -->
-        <div id="down-arrow" aria-hidden="true" onclick="scrollToProjects()"></div>
+        (causing the page to scroll down slightly and hide the arrow).
+        Hide by default until DOMContentLoaded to prevent unresponsive interaction. -->
+        <div id="down-arrow" class="scrolled" aria-hidden="true" onclick="scrollToProjects()"></div>
       </div>
     </section>
 
