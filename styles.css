@@ -328,7 +328,7 @@ button {
       cursor: pointer;
     }
 
-    &[open] summary > div > span {
+    &[open] summary > .element-text > span:first-child {
       > span {
         opacity: 0;
       }
@@ -379,8 +379,9 @@ button {
       flex-wrap: wrap;
       align-content: flex-start;
       padding: 0 10px;
+      border-radius: 2px;
 
-      > span {
+      > span:first-child {
         /* Support replacement with down arrow for details summary elements */
         position: relative;
         display: flex;
@@ -389,7 +390,7 @@ button {
         font-size: 3rem;
       }
 
-      > div {
+      > .column {
         flex: 1 1 auto;
         align-items: flex-start;
         flex-wrap: wrap;
